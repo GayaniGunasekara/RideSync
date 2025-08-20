@@ -18,6 +18,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background-color: #EBF4F6;
+  /* change this to your RideSync background color */
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;

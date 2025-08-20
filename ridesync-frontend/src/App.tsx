@@ -1,18 +1,16 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Layout from "./components/Layout";
-import HomePage from "./pages/HomePage.tsx";
+import { useState, useEffect } from "react";
+import SplashScreen from "./pages/SplashScreen";
+import Home from "./pages/HomePage";
 
+function App() {
+  const [loading, setLoading] = useState(true);
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return loading ? <SplashScreen /> : <Home />;
 }
+
+export default App;

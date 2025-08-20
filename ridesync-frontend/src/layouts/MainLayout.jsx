@@ -1,6 +1,10 @@
-import { type ReactNode } from "react";
+// MainLayout.jsx
 
-export default function MainLayout({ children }: { children: ReactNode }) {
+import React from "react";
+
+// MainLayout component
+// children → React elements passed from parent components
+export default function MainLayout({ children }) {
     return (
         <div className="min-h-screen flex flex-col bg-[#F4FDFF]">
             {/* Navbar */}

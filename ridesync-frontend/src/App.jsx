@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import SplashScreen from "./pages/SplashScreen";
-import Home from "./pages/HomePage";
+import Home from "./pages/LoginPage";
+import RegisterSelection from "./pages/RegisterSelection";
 
 function App() {
   // state: loading true = show splash screen

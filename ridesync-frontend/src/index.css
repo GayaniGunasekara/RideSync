@@ -1,17 +1,28 @@
+/* ================================
+   Import Tailwind base styles
+   ================================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+/* ================================
+   Root-level global styles
+   ================================ */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Font settings */
+  font-family: poppins;
+  line-height: 2;
 
+
+  /* Default color scheme (supports light & dark modes) */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Default text color */
+  background-color: #071952;
+  /* Default background (dark) */
 
+  /* Font rendering optimizations */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,71 +30,140 @@
 }
 
 
+/* ================================
+   Page structure
+   ================================ */
 html,
 body,
 #root {
   height: 100%;
+  /* Ensure full height */
   margin: 0;
+  /* Remove default margin */
   background-color: #EBF4F6;
-  /* change this to your RideSync background color */
+  /* Light background (customizable for RideSync) */
 }
 
 
+/* ================================
+   Links <a>
+   ================================ */
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: #071952;
+  /* Default link color */
+  text-decoration: none;
+  /* Remove underline */
 }
 
 a:hover {
-  color: #535bf2;
+  color: #088395;
+  /* Link hover color */
 }
 
+
+/* ================================
+   Body layout
+   ================================ */
 body {
   margin: 0;
   display: flex;
+  /* Flexbox for centering */
   place-items: center;
+  /* Center children (horizontally & vertically) */
   min-width: 320px;
+  /* Prevent content from shrinking too small */
   min-height: 100vh;
+  /* Ensure full viewport height */
 }
 
+
+/* ================================
+   Headings <h1>
+   ================================ */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+  color: #071952;
+  font-size: 30px;
+  /* Custom dark blue color */
 }
 
-button {
-  border-radius: 8px;
+
+
+
+/* ================================
+  input field ><input>
+   ================================ */
+input {
+  margin: 1em;
+  border-radius: 10px;
+  /* Rounded corners */
   border: 1px solid transparent;
+  /* Invisible border (used for hover effect) */
   padding: 0.6em 1.2em;
+  /* Spacing inside button */
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+}
+
+
+
+
+
+/* ================================
+   Buttons <button>
+   ================================ */
+button {
+  border-radius: 20px;
+  /* Rounded corners */
+  border: 1px solid transparent;
+  /* Invisible border (used for hover effect) */
+  padding: 0.6em 1.2em;
+  margin: 1em;
+  /*marging around button*?
+  /* Spacing inside button */
+  font-size: 1em;
+  color: #071952;
+  font-weight: 700;
+  /* Inherit root font */
+  background-color: #000000;
+  /* Dark background */
   cursor: pointer;
+  /* Pointer on hover */
   transition: border-color 0.25s;
+  /* Smooth hover transition */
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #088395;
+  /* Highlight border on hover */
 }
 
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+  /* Accessibility focus style */
 }
 
+
+/* ================================
+   Light theme overrides
+   (applies if user prefers light mode)
+   ================================ */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
+    /* Darker text */
     background-color: #ffffff;
+    /* White background */
   }
 
   a:hover {
-    color: #747bff;
+    color: #071952;
+    /* Softer link hover color */
   }
 
   button {
     background-color: #f9f9f9;
+    /* Light button background */
   }
 }

@@ -1,23 +1,49 @@
 // App.jsx
-
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+// Importing all pages
 import SplashScreen from "./pages/SplashScreen";
-import Home from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage";
 import RegisterSelection from "./pages/RegisterSelection";
+import RegisterVehicleOwner from "./pages/RegisterVehicleOwner";
+import RegisterWorkshopOwner from "./pages/RegisterWorkshopOwner";
 
 function App() {
-  // state: loading true = show splash screen
+  // State to control splash screen visibility
   const [loading, setLoading] = useState(true);
 
-  // useEffect runs once on mount
+  // useEffect → run once when App loads
   useEffect(() => {
-    // after 5 seconds, switch to Home
+    // Show splash screen for 5 seconds
     const timer = setTimeout(() => setLoading(false), 5000);
-    return () => clearTimeout(timer); // cleanup on unmount
+
+    // Cleanup timer on unmount
+    return () => clearTimeout(timer);
   }, []);
 
-  // conditional rendering
-  return loading ? <SplashScreen /> : <Home />;
+  // If still loading, show splash screen
+  if (loading) {
+    return <SplashScreen />;
+  }
+
+  // Once splash is done → render routes
+  return (
+    <Router>
+      <Routes>
+        {/* Default route → Login Page */}
+        <Route path="/" element={<LoginPage />} />
+
+        {/* Register flow */}
+        <Route path="/register" element={<RegisterSelection />} />
+        <Route path="/registerVehicleOwner" element={<RegisterVehicleOwner />} />
+        <Route path="/registerWorkshopOwner" element={<RegisterWorkshopOwner />} />
+
+        {/* Catch-all: Redirect any unknown routes to Login Page */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

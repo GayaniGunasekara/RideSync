@@ -91,6 +91,12 @@ h1 {
 
 
 
+
+P1 {
+  font-size: 20px;
+}
+
+
 /* ================================
   input field ><input>
    ================================ */
@@ -113,6 +119,8 @@ input {
    Buttons <button>
    ================================ */
 button {
+  width: 350px;
+
   border-radius: 20px;
   /* Rounded corners */
   border: 1px solid transparent;

@@ -1,18 +1,18 @@
 // src/context/AuthContext.jsx
 import React, { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext();
+const AuthContext = createContext();  //a special “box” to store authentication info
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(null); // null = not logged in
+    const [user, setUser] = useState(null); // null = means initially no one is logged in.
 
-    const login = (role) => {
-        // role: "owner" or "workshop"
-        setUser({ role });
+    const login = ({ username, role }) => {
+        setUser({ username, password, role }); //sets the user info when someone logs in
     };
 
+
     const logout = () => {
-        setUser(null);
+        setUser(null);   //clears the user info on logout
     };
 
     return (
@@ -23,5 +23,5 @@ export function AuthProvider({ children }) {
 }
 
 export function useAuth() {
-    return useContext(AuthContext);
+    return useContext(AuthContext);   //makes it easy for any component to get user, login, and logout.
 }

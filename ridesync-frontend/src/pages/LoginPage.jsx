@@ -3,10 +3,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // for navigation
 import Card from "../components/Card-Login-Reg"; // ✅ Reusable card component
 import "../index.css"; // Global styles
+import { useAuth } from "../context/AuthContext";  //import the useAuth
 
 export default function LoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const { login } = useAuth(); //get the login function from context
     const navigate = useNavigate();
 
     // ✅ Function to handle login form submission
@@ -19,10 +21,10 @@ export default function LoginPage() {
         // Example role check (you will replace with actual user data from backend)
         if (username.includes("vehicle")) {
             localStorage.setItem("userRole", "vehicleOwner"); // save role
-            navigate("/dashboard/vehicle"); // redirect
+            navigate("/VehicleOwner/Dashboard"); // redirect
         } else {
             localStorage.setItem("userRole", "workshopOwner");
-            navigate("/dashboard/workshop");
+            navigate("/WorkshopOwner/Dashboard");
         }
     };
 

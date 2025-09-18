@@ -1,13 +1,14 @@
-// App.jsx
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+// src/App.jsx
 import { useState, useEffect } from "react";
 
-// Importing all pages
+// Context provider
+import { AuthProvider } from "./context/AuthContext";
+
+// Splash screen
 import SplashScreen from "./pages/SplashScreen";
-import LoginPage from "./pages/LoginPage";
-import RegisterSelection from "./pages/RegisterSelection";
-import RegisterVehicleOwner from "./pages/RegisterVehicleOwner";
-import RegisterWorkshopOwner from "./pages/RegisterWorkshopOwner";
+
+// Router (all routes are defined here)
+import AppRouter from "./router/AppRouter";
 
 function App() {
   // State to control splash screen visibility
@@ -27,22 +28,11 @@ function App() {
     return <SplashScreen />;
   }
 
-  // Once splash is done → render routes
+  // Once splash is done → provide auth + load app routes
   return (
-    <Router>
-      <Routes>
-        {/* Default route → Login Page */}
-        <Route path="/" element={<LoginPage />} />
-
-        {/* Register flow */}
-        <Route path="/register" element={<RegisterSelection />} />
-        <Route path="/registerVehicleOwner" element={<RegisterVehicleOwner />} />
-        <Route path="/registerWorkshopOwner" element={<RegisterWorkshopOwner />} />
-
-        {/* Catch-all: Redirect any unknown routes to Login Page */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
   );
 }
 

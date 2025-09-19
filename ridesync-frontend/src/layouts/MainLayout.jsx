@@ -27,22 +27,23 @@ export default function MainLayout() {
 
             {/* Sidebar / Drawer */}
             {menuOpen && (
-                <nav className="absolute top-0 left-0 w-64 h-full bg-gray-100 shadow-lg p-4">
+                <nav className="absolute top-0 left-0 w-64 h-full bg-gray-100 shadow-lg p-4 z-50">
                     <h2 className="font-bold mb-4">Menu</h2>
 
-                    {user?.role === "owner" && (
+                    {user?.role === "VehicleOwner" && (
                         <ul>
-                            <li><Link to="/owner/dashboard">Dashboard</Link></li>
-                            <li><Link to="/owner/register-vehicle">Register Vehicle</Link></li>
+                            <li><Link to="/VehicleOwner/Dashboard">Dashboard</Link></li>
+
                         </ul>
                     )}
 
-                    {user?.role === "workshop" && (
+                    {user?.role === "WorkshopOwner" && (
                         <ul>
-                            <li><Link to="/workshop/dashboard">Dashboard</Link></li>
-                            <li><Link to="/workshop/manage-services">Manage Services</Link></li>
+                            <li><Link to="/WorkshopOwner/Dashboard">Dashboard</Link></li>
+
                         </ul>
                     )}
+
 
                     <button onClick={logout} className="mt-4 text-red-500">Logout</button>
                 </nav>
@@ -53,7 +54,7 @@ export default function MainLayout() {
                 <Outlet /> {/* Pages render here */}
             </main>
 
-            {/* Footer (optional) */}
+            {/* Footer */}
             <footer className="p-4 text-center text-sm text-gray-500">
                 © 2025 RideSync
             </footer>

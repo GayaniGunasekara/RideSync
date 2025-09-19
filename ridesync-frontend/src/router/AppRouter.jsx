@@ -14,9 +14,9 @@ import RegisterSelection from "../pages/RegisterSelection";
 import RegisterVehicleOwner from "../pages/RegisterVehicleOwner";
 import RegisterWorkshopOwner from "../pages/RegisterWorkshopOwner";
 
-// Dashboards (match your folder structure)
-import OwnerDashboard from "../pages/VehicleOwner/Dashboard";
-import WorkshopDashboard from "../pages/WorkshopOwner/Dashboard";
+// Dashboards (import from folder structure)
+import VehicleOwnerDashboard from "../pages/VehicleOwner/Dashboard";
+import WorkshopOwnerDashboard from "../pages/WorkshopOwner/Dashboard";
 
 export default function AppRouter() {
     return (
@@ -25,20 +25,20 @@ export default function AppRouter() {
                 {/* Public routes */}
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterSelection />} />
-                <Route path="/registerVehicleOwner" element={<RegisterVehicleOwner />} />
-                <Route path="/registerWorkshopOwner" element={<RegisterWorkshopOwner />} />
+                <Route path="/register/vehicle-owner" element={<RegisterVehicleOwner />} />
+                <Route path="/register/workshop-owner" element={<RegisterWorkshopOwner />} />
 
                 {/* Vehicle Owner routes (protected) */}
-                <Route element={<ProtectedRoute allowedRoles={["vehicleOwner"]} />}>
+                <Route element={<ProtectedRoute allowedRoles={["VehicleOwner"]} />}>
                     <Route element={<MainLayout />}>
-                        <Route path="/owner/dashboard" element={<OwnerDashboard />} />
+                        <Route path="/VehicleOwner/Dashboard" element={<VehicleOwnerDashboard />} />
                     </Route>
                 </Route>
 
                 {/* Workshop Owner routes (protected) */}
-                <Route element={<ProtectedRoute allowedRoles={["workshopOwner"]} />}>
+                <Route element={<ProtectedRoute allowedRoles={["WorkshopOwner"]} />}>
                     <Route element={<MainLayout />}>
-                        <Route path="/workshop/dashboard" element={<WorkshopDashboard />} />
+                        <Route path="/WorkshopOwner/Dashboard" element={<WorkshopOwnerDashboard />} />
                     </Route>
                 </Route>
 

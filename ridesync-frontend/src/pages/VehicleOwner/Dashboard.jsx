@@ -1,5 +1,8 @@
-import useSetTitle from "../../hooks/useSetTitle";
-export default function OwnerDashboard() {
-    useSetTitle("Owner • Dashboard");
-    return <div>Owner dashboard content</div>;
+
+export default function VehicleOwnerDashboard() {
+    return (
+
+        <h1>Hello vehicle owner</h1>
+
+    );
 }

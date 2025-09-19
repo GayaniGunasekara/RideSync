@@ -1,31 +1,33 @@
-// ✅ Import the useState hook from React
+// src/pages/LoginPage.jsx
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // for navigation
-import Card from "../components/Card-Login-Reg"; // ✅ Reusable card component
-import "../index.css"; // Global styles
-import { useAuth } from "../context/AuthContext";  //import the useAuth
+import { useNavigate } from "react-router-dom";
+import Card from "../components/Card-Login-Reg";
+import "../index.css";
+import { useAuth } from "../context/AuthContext";
 
 export default function LoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { login } = useAuth(); //get the login function from context
+    const { login } = useAuth(); // get login() from context
     const navigate = useNavigate();
 
-    // ✅ Function to handle login form submission
+    // Handle login form submission
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // TODO: Replace this with backend/Firebase authentication check
-        console.log("Username:", username, "Password:", password);
-
-        // Example role check (you will replace with actual user data from backend)
-        if (username.includes("vehicle")) {
-            localStorage.setItem("userRole", "vehicleOwner"); // save role
-            navigate("/VehicleOwner/Dashboard"); // redirect
+        // 🚩 For now we "decide role" based on username
+        let role;
+        if (username.toLowerCase().includes("vehicle")) {
+            role = "VehicleOwner";
+            login({ username, role }); // save in context + localStorage
+            navigate("/VehicleOwner/Dashboard"); // redirect to vehicle owner dashboard
         } else {
-            localStorage.setItem("userRole", "workshopOwner");
+            role = "WorkshopOwner";
+            login({ username, role });
             navigate("/WorkshopOwner/Dashboard");
         }
+
+        console.log("Logged in as:", username, "Role:", role);
     };
 
     return (

@@ -27,20 +27,20 @@ export default function AppRouter() {
                 <Route path="/register" element={<RegisterSelection />} />
                 <Route path="/register/vehicle-owner" element={<RegisterVehicleOwner />} />
                 <Route path="/register/workshop-owner" element={<RegisterWorkshopOwner />} />
-
-                {/* Vehicle Owner routes (protected) */}
+                {/* Vehicle Owner routes */}
                 <Route element={<ProtectedRoute allowedRoles={["VehicleOwner"]} />}>
-                    <Route element={<MainLayout />}>
-                        <Route path="/VehicleOwner/Dashboard" element={<VehicleOwnerDashboard />} />
+                    <Route path="/VehicleOwner" element={<MainLayout />}>
+                        <Route path="Dashboard" element={<VehicleOwnerDashboard />} />
                     </Route>
                 </Route>
 
-                {/* Workshop Owner routes (protected) */}
+                {/* Workshop Owner routes */}
                 <Route element={<ProtectedRoute allowedRoles={["WorkshopOwner"]} />}>
-                    <Route element={<MainLayout />}>
-                        <Route path="/WorkshopOwner/Dashboard" element={<WorkshopOwnerDashboard />} />
+                    <Route path="/WorkshopOwner" element={<MainLayout />}>
+                        <Route path="Dashboard" element={<WorkshopOwnerDashboard />} />
                     </Route>
                 </Route>
+
 
                 {/* Catch-all */}
                 <Route path="*" element={<Navigate to="/" replace />} />

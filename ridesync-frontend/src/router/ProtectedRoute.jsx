@@ -6,6 +6,11 @@ export default function ProtectedRoute({ allowedRoles }) {
     const { user } = useAuth();
     const location = useLocation();
 
+    // 🟢 Debug log
+    console.log("ProtectedRoute user:", user, "allowedRoles:", allowedRoles);
+
+
+
     if (!user) {
         // not logged in → back to login
         return <Navigate to="/" replace />;

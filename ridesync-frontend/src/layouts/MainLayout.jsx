@@ -1,12 +1,10 @@
 // src/layouts/MainLayout.jsx
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { usePageTitle } from "../context/PageTitleContext";
 import { Link, Outlet } from "react-router-dom";
 
 export default function MainLayout() {
     const { user, logout } = useAuth();
-    const { title } = usePageTitle();
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
@@ -18,8 +16,8 @@ export default function MainLayout() {
                     ☰
                 </button>
 
-                {/* Page Title */}
-                <h1 className="text-lg font-semibold">{title}</h1>
+                {/* Page Title (static for now) */}
+                <h1 className="text-lg font-semibold">RideSync</h1>
 
                 {/* Logo */}
                 <div className="font-bold text-xl text-blue-600">RideSync</div>
@@ -33,17 +31,14 @@ export default function MainLayout() {
                     {user?.role === "VehicleOwner" && (
                         <ul>
                             <li><Link to="/VehicleOwner/Dashboard">Dashboard</Link></li>
-
                         </ul>
                     )}
 
                     {user?.role === "WorkshopOwner" && (
                         <ul>
                             <li><Link to="/WorkshopOwner/Dashboard">Dashboard</Link></li>
-
                         </ul>
                     )}
-
 
                     <button onClick={logout} className="mt-4 text-red-500">Logout</button>
                 </nav>

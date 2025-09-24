@@ -18,6 +18,14 @@ import RegisterWorkshopOwner from "../pages/RegisterWorkshopOwner";
 import VehicleOwnerDashboard from "../pages/VehicleOwner/Dashboard";
 import WorkshopOwnerDashboard from "../pages/WorkshopOwner/Dashboard";
 
+
+
+// Vehicle Owner imports
+
+
+//Workshop Owner Imports add here later
+
+
 export default function AppRouter() {
     return (
         <BrowserRouter>
@@ -27,20 +35,21 @@ export default function AppRouter() {
                 <Route path="/register" element={<RegisterSelection />} />
                 <Route path="/register/vehicle-owner" element={<RegisterVehicleOwner />} />
                 <Route path="/register/workshop-owner" element={<RegisterWorkshopOwner />} />
-                {/* Vehicle Owner routes */}
+
+                {/* Vehicle Owner routes (protected) */}
                 <Route element={<ProtectedRoute allowedRoles={["VehicleOwner"]} />}>
-                    <Route path="/VehicleOwner" element={<MainLayout />}>
-                        <Route path="Dashboard" element={<VehicleOwnerDashboard />} />
+                    <Route element={<MainLayout />}>
+                        <Route path="/VehicleOwner/Dashboard" element={<VehicleOwnerDashboard />} />
                     </Route>
+
                 </Route>
 
-                {/* Workshop Owner routes */}
+                {/* Workshop Owner routes (protected) */}
                 <Route element={<ProtectedRoute allowedRoles={["WorkshopOwner"]} />}>
-                    <Route path="/WorkshopOwner" element={<MainLayout />}>
-                        <Route path="Dashboard" element={<WorkshopOwnerDashboard />} />
+                    <Route element={<MainLayout />}>
+                        <Route path="/WorkshopOwner/Dashboard" element={<WorkshopOwnerDashboard />} />
                     </Route>
                 </Route>
-
 
                 {/* Catch-all */}
                 <Route path="*" element={<Navigate to="/" replace />} />

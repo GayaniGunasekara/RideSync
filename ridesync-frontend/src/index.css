@@ -175,3 +175,10 @@ button:focus-visible {
     /* Light button background */
   }
 }
+
+
+vehicles {
+  display: flex;
+  /* Flexbox for centering */
+  place-items: center;
+}

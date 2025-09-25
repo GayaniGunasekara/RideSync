@@ -1,11 +1,13 @@
 // src/router/AppRouter.jsx
 import React from "react";
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Layout
 import MainLayout from "../layouts/MainLayout";
 
-// Auth & Protection
+// Auth & Protected routes
+import { useAuth } from "../context/AuthContext";
 import ProtectedRoute from "./ProtectedRoute";
 
 // Pages
@@ -27,6 +29,8 @@ import WorkshopOwnerDashboard from "../pages/WorkshopOwner/Dashboard";
 
 
 export default function AppRouter() {
+    const { user } = useAuth();
+
     return (
         <BrowserRouter>
             <Routes>

@@ -1,11 +1,7 @@
-# MotorServ360 🚗🛠️
+# RideSync 🚗🛠️
 
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/yourusername/motorserv360)](https://github.com/yourusername/motorserv360/issues)
-[![Forks](https://img.shields.io/github/forks/yourusername/motorserv360)](https://github.com/yourusername/motorserv360/network)
-[![Stars](https://img.shields.io/github/stars/yourusername/motorserv360)](https://github.com/yourusername/motorserv360/stargazers)
 
-> A web-based platform connecting vehicle owners with Motor Servicing & Repair Centers (Workshops) for seamless bookings, service tracking, and management.
+> A web-based platform connecting vehicle owners with Motor Servicing & Repair Centers (Workshops) for seamless bookings, service tracking, and process management.
 
 ## 🌟 Features
 
@@ -26,8 +22,6 @@
 - Access analytics and performance insights
 
 ## 🛠️ Technologies
-- **Frontend:** Flutter Web / React.js  
-- **Backend & Database:** Firebase / Firestore (Real-time sync, Authentication, Storage)  
+- **Frontend:**  React.js  
+- **Backend & Database:** PostgreSQL  
 - **AI:** Service reminders using vehicle model and odometer data  
-- **Notifications:** Firebase Cloud Messaging (FCM) & SMS APIs  
-- **Hosting:** Firebase Hosting / Vercel  

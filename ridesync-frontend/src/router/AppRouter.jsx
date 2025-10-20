@@ -23,10 +23,16 @@ import WorkshopOwnerDashboard from "../pages/WorkshopOwner/Dashboard";
 
 
 // Vehicle Owner imports
+import VehicleOwnerVehicles from "../pages/VehicleOwner/Vehicles";
+import VehicleOwnerNotifications from "../pages/VehicleOwner/Notifications";
+import VehicleOwnerProfile from "../pages/VehicleOwner/Profile";
+import VehicleOwnerServiceCenters from "../pages/VehicleOwner/ServiceCenters";
 
-
-//Workshop Owner Imports add here later
-
+// Workshop Owner imports
+import ServiceRequests from "../pages/WorkshopOwner/ServiceRequests";
+import Inventory from "../pages/WorkshopOwner/Inventory";
+import Customers from "../pages/WorkshopOwner/Customers";
+import Analytics from "../pages/WorkshopOwner/Analytics";
 
 export default function AppRouter() {
     const { user } = useAuth();
@@ -44,14 +50,21 @@ export default function AppRouter() {
                 <Route element={<ProtectedRoute allowedRoles={["VehicleOwner"]} />}>
                     <Route element={<MainLayout />}>
                         <Route path="/VehicleOwner/Dashboard" element={<VehicleOwnerDashboard />} />
+                        <Route path="/VehicleOwner/Vehicles" element={<VehicleOwnerVehicles />} />
+                        <Route path="/VehicleOwner/Notifications" element={<VehicleOwnerNotifications />} />
+                        <Route path="/VehicleOwner/Profile" element={<VehicleOwnerProfile />} />
+                        <Route path="/VehicleOwner/ServiceCenters" element={<VehicleOwnerServiceCenters />} />
                     </Route>
-
                 </Route>
 
                 {/* Workshop Owner routes (protected) */}
                 <Route element={<ProtectedRoute allowedRoles={["WorkshopOwner"]} />}>
                     <Route element={<MainLayout />}>
                         <Route path="/WorkshopOwner/Dashboard" element={<WorkshopOwnerDashboard />} />
+                        <Route path="/WorkshopOwner/ServiceRequests" element={<ServiceRequests />} />
+                        <Route path="/WorkshopOwner/Inventory" element={<Inventory />} />
+                        <Route path="/WorkshopOwner/Customers" element={<Customers />} />
+                        <Route path="/WorkshopOwner/Analytics" element={<Analytics />} />
                     </Route>
                 </Route>
 
@@ -61,3 +74,7 @@ export default function AppRouter() {
         </BrowserRouter>
     );
 }
+
+
+
+

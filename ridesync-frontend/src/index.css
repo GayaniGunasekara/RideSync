@@ -36,9 +36,10 @@
 html,
 body,
 #root {
-  height: 100%;
+
   /* Ensure full height */
-  margin: 0;
+
+  width: 100%;
   /* Remove default margin */
   background-color: #EBF4F6;
   /* Light background (customizable for RideSync) */

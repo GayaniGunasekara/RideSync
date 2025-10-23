@@ -94,12 +94,11 @@ export default function WorkshopOwnerDashboard() {
                 </div>
             </div>
 
-            {/* Stats Row */}
-            <div className="flex flex-wrap justify-center ">
+            {/* Stats Row — FLEX with wrapper margins */}
+            <div className="flex flex-wrap justify-center p-6">
                 {stats.map((stat, index) => (
-                    <div className="flex-1 min-w-[180px] max-w-[220px]">
+                    <div key={index} className="m-54">
                         <StatCard
-                            key={index}
                             icon={stat.icon}
                             title={stat.title}
                             value={stat.value}
@@ -109,6 +108,9 @@ export default function WorkshopOwnerDashboard() {
                     </div>
                 ))}
             </div>
+
+
+
 
 
 

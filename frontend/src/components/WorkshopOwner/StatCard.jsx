@@ -10,12 +10,12 @@ export function StatCard({ icon: Icon, title, value, iconColor, trend }) {
         >
             <div className="flex items-center justify-between m-10">
                 <div className="flex-1">
-                    <p className="text-lg text-gray-600 mb-1">{title}</p>
-                    <p className="text-2xl font-bold text-gray-900">{value}</p>
+                    <p className="text-2xl text-[#088395] mb-">{title}</p>
+                    <p className="text-4xl font-bold text-[#024b56] ">{value}</p>
                     {trend && (
-                        <div className="flex items-center gap-1 mt-1">
+                        <div className="flex items-center gap-2 mt-1">
                             <TrendingUp
-                                size={14}
+                                size={30}
                                 className={trend > 0 ? 'text-green-600' : 'text-red-600'}
                             />
                             <span
@@ -30,7 +30,7 @@ export function StatCard({ icon: Icon, title, value, iconColor, trend }) {
                 </div>
                 <div
                     className="p-3 rounded-lg"
-                    style={{ backgroundColor: `${iconColor}20` }}
+                    style={{ backgroundColor: `${iconColor}1` }}
                 >
                     <Icon size={24} color={iconColor} />
                 </div>

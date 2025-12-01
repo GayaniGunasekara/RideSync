@@ -85,19 +85,14 @@ export default function WorkshopOwnerDashboard() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Dashboard</h1>
-                    <p className="text-gray-600 mt-1">Welcome back! Here's your workshop overview.</p>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-[#024b56]">Dashboard</h1>
+                    <p className=" text-[#026574]  mt-1">Welcome back! Here's your workshop overview.</p>
                 </div>
-                <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                        <Wrench className="text-white" size={20} />
-                    </div>
-                    <span className="text-gray-800 font-semibold hidden sm:inline">Workshop Owner</span>
-                </div>
+
             </div>
 
             {/* Stats Row — FLEX with wrapper margins */}
-            <div className="flex flex-wrap justify-center p-6">
+            <div className="flex flex-wrap justify-center p-6 gap-10" >
                 {stats.map((stat, index) => (
                     <div key={index} className="m-54">
                         <StatCard
@@ -122,8 +117,8 @@ export default function WorkshopOwnerDashboard() {
                 {/* Recent Services */}
                 <div className="lg:col-span-2 bg-white border-2 border-gray-200 rounded-xl p-6 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-xl font-semibold text-gray-900">Recent Services</h3>
-                        <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                        <h3 className="text-2xl font-bold text-[#024b56]">Recent Services</h3>
+                        <button className="text-[#024b56] hover:text-[#038fa4] text-sm font-medium">
                             View All
                         </button>
                     </div>
@@ -133,7 +128,7 @@ export default function WorkshopOwnerDashboard() {
                         ))}
                     </div>
                     <div className="mt-6 flex justify-center">
-                        <button className="px-6 py-2 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                        <button className="px-6 py-2 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-[#024b56] hover:text-[#038fa4] text-sm font-medium">
                             View All Services
                         </button>
                     </div>
@@ -142,8 +137,8 @@ export default function WorkshopOwnerDashboard() {
                 {/* Upcoming Appointments */}
                 <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-sm">
                     <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-xl font-semibold text-gray-900">Today's Schedule</h3>
-                        <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                        <h3 className="text-2xl font-bold text-[#024b56]">Today's Schedule</h3>
+                        <button className="text-[#024b56] hover:text-[#038fa4] text-sm font-medium">
                             View Calendar
                         </button>
                     </div>
@@ -151,12 +146,12 @@ export default function WorkshopOwnerDashboard() {
                         {upcomingAppointments.map((appointment, index) => (
                             <div key={index} className="p-4 bg-gray-50 rounded-lg">
                                 <div className="flex items-center justify-between mb-2">
-                                    <span className="font-semibold text-gray-900">{appointment.time}</span>
-                                    <span className="text-sm text-gray-500">{appointment.duration}</span>
+                                    <span className="text-medium font-bold text-[#026574]">{appointment.time}</span>
+                                    <span className="text-medium font-semibold text-[#026574]">{appointment.duration}</span>
                                 </div>
-                                <h4 className="font-medium text-gray-900">{appointment.customer}</h4>
-                                <p className="text-sm text-gray-600">{appointment.vehicle}</p>
-                                <p className="text-sm text-blue-600">{appointment.service}</p>
+                                <h4 className="text-sm text-[#026574] ">{appointment.customer}</h4>
+                                <p className="text-medium text-[#026574] ">{appointment.vehicle}</p>
+                                <p className="text-medium font-semibold text-[#026574]">{appointment.service}</p>
                             </div>
                         ))}
                     </div>
@@ -168,31 +163,31 @@ export default function WorkshopOwnerDashboard() {
 
             {/* Alerts & Notifications */}
             <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Alerts & Notifications</h3>
+                <h3 className="text-2xl font-bold text-[#024b56] mb-10 ">Alerts & Notifications</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-2">
                             <AlertCircle className="text-red-600" size={20} />
-                            <h4 className="font-semibold text-red-800">Urgent</h4>
+                            <h4 className="text-medium font-bold text-[#026574]">Urgent</h4>
                         </div>
                         <p className="text-sm text-red-700">3 vehicles need immediate attention</p>
                     </div>
                     <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-2">
                             <Package className="text-yellow-600" size={20} />
-                            <h4 className="font-semibold text-yellow-800">Inventory</h4>
+                            <h4 className="text-medium font-bold text-[#026574]">Inventory</h4>
                         </div>
                         <p className="text-sm text-yellow-700">10 spare parts running low</p>
                     </div>
                     <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-2">
                             <Calendar className="text-blue-600" size={20} />
-                            <h4 className="font-semibold text-blue-800">Schedule</h4>
+                            <h4 className="text-medium font-bold text-[#026574]">Schedule</h4>
                         </div>
                         <p className="text-sm text-blue-700">5 appointments tomorrow</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

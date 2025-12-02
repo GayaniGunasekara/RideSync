@@ -165,21 +165,21 @@ export default function WorkshopOwnerDashboard() {
             <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-sm">
                 <h3 className="text-2xl font-bold text-[#024b56] mb-10 ">Alerts & Notifications</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <div className="p-4 bg-[#b5ebf4]   border border-red-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-2">
                             <AlertCircle className="text-red-600" size={20} />
                             <h4 className="text-medium font-bold text-[#026574]">Urgent</h4>
                         </div>
                         <p className="text-sm text-red-700">3 vehicles need immediate attention</p>
                     </div>
-                    <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <div className="p-4 bg-[#b5ebf4]  border border-yellow-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-2">
                             <Package className="text-yellow-600" size={20} />
                             <h4 className="text-medium font-bold text-[#026574]">Inventory</h4>
                         </div>
                         <p className="text-sm text-yellow-700">10 spare parts running low</p>
                     </div>
-                    <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <div className="p-4 bg-[#b5ebf4]  border border-blue-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-2">
                             <Calendar className="text-blue-600" size={20} />
                             <h4 className="text-medium font-bold text-[#026574]">Schedule</h4>

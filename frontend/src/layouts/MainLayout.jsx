@@ -1,6 +1,8 @@
 // src/layouts/MainLayout.jsx
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import RideSyncLogo from "../assets/ridesync-logo.svg";
+
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Menu, X, Home, Car, MapPin, Bell, User, Wrench, Package, Users, BarChart3, LogOut } from 'lucide-react';
 
@@ -44,12 +46,13 @@ export default function MainLayout() {
             `}>
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <span className="text-white font-bold text-lg">RS</span>
+                        <div className="w-10 h-10 bg-gradient-to-br rounded-xl flex items-center justify-center shadow-lg">
+                            <img src={RideSyncLogo} alt="RideSync Logo" className="w-12 h-12" />
+
                         </div>
                         <div>
-                            <h2 className="text-xl font-bold text-gray-800">RideSync</h2>
-                            <p className="text-xs text-gray-500 capitalize">{user?.role?.replace(/([A-Z])/g, ' $1').trim()}</p>
+                            <h2 className="text-xl font-bold text-[#024b56]  ">RideSync</h2>
+                            <p className="text-xs text-[#024b56] capitalize">{user?.role?.replace(/([A-Z])/g, ' $1').trim()}</p>
                         </div>
                     </div>
                     <button
@@ -70,12 +73,12 @@ export default function MainLayout() {
                                     key={item.path}
                                     to={item.path}
                                     className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive
-                                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-500 shadow-sm'
-                                        : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                                        ? 'bg-blue-50 text-[#024b56]   border-r-2 border-[#024b56]   shadow-sm'
+                                        : 'text-[#038fa4]  hover:bg-gray-50 hover:text-[#024b56]  '
                                         }`}
                                     onClick={() => setMenuOpen(false)}
                                 >
-                                    <Icon size={20} className={isActive ? 'text-blue-600' : ''} />
+                                    <Icon size={20} className={isActive ? 'text-[#024b56]  ' : ''} />
                                     <span className="font-medium">{item.label}</span>
                                 </Link>
                             );
@@ -85,7 +88,7 @@ export default function MainLayout() {
                     <div className="mt-8 pt-4 border-t border-gray-200">
                         <button
                             onClick={logout}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition-colors w-full font-medium"
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-[#038fa4]  hover:bg-red-50 transition-colors w-full font-medium"
                         >
                             <LogOut size={20} />
                             <span>Logout</span>
@@ -101,15 +104,13 @@ export default function MainLayout() {
                     <div className="flex items-center justify-between">
                         <button
                             onClick={() => setMenuOpen(true)}
-                            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                            className="p-2 rounded-lg hover:bg-gray-100  transition-colors"
                         >
-                            <Menu size={20} />
+                            <Menu size={20} className="text-[#024b56]" />
                         </button>
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold text-sm">RS</span>
-                            </div>
-                            <span className="font-semibold text-gray-800">RideSync</span>
+
+                            <span className="font-bold text-2xl text-[#024b56]  ">RideSync</span>
                         </div>
                         <div className="w-8" />
                     </div>

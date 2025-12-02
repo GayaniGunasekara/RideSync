@@ -114,20 +114,24 @@ export default function Inventory() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Inventory Management</h1>
-                    <p className="text-gray-600 mt-1">Track and manage your workshop inventory and spare parts.</p>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-[#024b56]">Inventory Management</h1>
+                    <p className="text-[#026574]  mt-1">Track and manage your workshop inventory and spare parts.</p>
                 </div>
                 <div className="flex gap-2">
-                    <button className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2">
+                    <button className="bg-gray-100 text-[#024b56] px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2">
                         <Filter size={16} />
                         Filter
                     </button>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2">
+                    <button className="bg-[#024b56] text-white px-4 py-2 rounded-lg hover:bg-[#038fa4]  transition-colors flex items-center gap-2">
                         <Plus size={16} />
                         Add Item
                     </button>
                 </div>
             </div>
+
+
+
+
 
             {/* Search Bar */}
             <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">

@@ -84,14 +84,8 @@ export default function VehicleOwnerDashboard() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Dashboard</h1>
-                    <p className="text-gray-600 mt-1">Welcome back! Here's your vehicle overview.</p>
-                </div>
-                <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                        <Car className="text-white" size={20} />
-                    </div>
-                    <span className="text-gray-800 font-semibold hidden sm:inline">Vehicle Owner</span>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-[#024b56]">Dashboard</h1>
+                    <p className="text-[#026574]  mt-1">Welcome back! Here's your vehicle overview.</p>
                 </div>
             </div>
 
@@ -132,8 +126,9 @@ export default function VehicleOwnerDashboard() {
             {/* My Vehicles Section */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900">My Vehicles</h2>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2">
+                    <h2 className="text-2xl font-bold text-[#024b56]">My Vehicles</h2>
+
+                    <button className="bg-[#024b56] text-white px-4 py-2 rounded-lg hover:bg-[#038fa4]  transition-colors flex items-center gap-2">
                         <Car size={16} />
                         Add Vehicle
                     </button>
@@ -184,8 +179,8 @@ export default function VehicleOwnerDashboard() {
             {/* Recent Notifications */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900">Recent Notifications</h2>
-                    <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                    <h2 className="text-2xl font-bold text-[#024b56]">Recent Notifications</h2>
+                    <button className="text-[#024b56] hover:text-[#038fa4] text-sm font-medium">
                         View All
                     </button>
                 </div>
@@ -215,8 +210,8 @@ export default function VehicleOwnerDashboard() {
 
             {/* Quick Actions */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h2 className="text-xl font-semibold text-gray-900 mb-6">Quick Actions</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <h2 className="text-2xl font-bold text-[#024b56]" >Quick Actions</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
                     <button className="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-colors flex flex-col items-center gap-2">
                         <Car size={24} />
                         <span className="text-sm font-medium">Add Vehicle</span>

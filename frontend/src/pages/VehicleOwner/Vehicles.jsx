@@ -81,8 +81,8 @@ export default function Vehicles() {
                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">My Vehicles</h1>
                     <p className="text-gray-600 mt-1">Manage your vehicle fleet and service history.</p>
                 </div>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-600 transition-colors">
-                    <Plus size={20} />
+                <button className="bg-[#024b56] text-white px-4 py-2 rounded-lg hover:bg-[#038fa4]  transition-colors flex items-center gap-2">
+                    <Plus size={16} />
                     Add Vehicle
                 </button>
             </div>
@@ -185,7 +185,7 @@ export default function Vehicles() {
                         </div>
 
                         <div className="flex gap-2">
-                            <button className="flex-1 bg-blue-100 text-blue-700 px-3 py-2 rounded-lg text-sm hover:bg-blue-200 transition-colors flex items-center justify-center gap-1">
+                            <button className="flex-1 text-white py-2 rounded-lg transition-colors flex items-center justify-center gap-2 bg-[#024b56] px-4 hover:bg-[#038fa4]">
                                 <Calendar size={14} />
                                 Schedule
                             </button>

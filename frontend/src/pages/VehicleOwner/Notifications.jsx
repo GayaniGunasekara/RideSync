@@ -118,11 +118,12 @@ export default function Notifications() {
                         </div>
                     )}
                     <div className="flex gap-2">
-                        <button className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2">
+                        <button className="bg-gray-100 text-[#024b56] px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2">
                             <Filter size={16} />
                             Filter
                         </button>
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        <button className="bg-[#024b56] text-white px-4 py-2 rounded-lg hover:bg-[#038fa4]  transition-colors flex items-center gap-2">
+
                             Mark All Read
                         </button>
                     </div>

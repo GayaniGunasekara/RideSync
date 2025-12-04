@@ -151,26 +151,8 @@ export default function Customers() {
                         <Users className="text-green-500" size={24} />
                     </div>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className="text-sm text-gray-600">VIP Customers</p>
-                            <p className="text-2xl font-bold text-purple-600">{vipCustomers}</p>
-                        </div>
-                        <Star className="text-purple-500" size={24} />
-                    </div>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className="text-sm text-gray-600">Total Revenue</p>
-                            <p className="text-2xl font-bold text-green-600">
-                                Rs. {totalRevenue.toLocaleString()}
-                            </p>
-                        </div>
-                        <Car className="text-green-500" size={24} />
-                    </div>
-                </div>
+
+
             </div>
 
             {/* Customer Cards Grid */}

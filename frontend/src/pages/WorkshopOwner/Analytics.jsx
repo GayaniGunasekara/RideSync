@@ -221,46 +221,8 @@ export default function Analytics() {
                 </div>
             </div>
 
-            {/* Customer Segments */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-6">Customer Segments</h3>
-                    <div className="space-y-4">
-                        {customerSegments.map((segment, index) => (
-                            <div key={index} className="flex items-center justify-between">
-                                <span className="text-sm text-gray-600">{segment.segment}</span>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-32 bg-gray-200 rounded-full h-2">
-                                        <div
-                                            className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full"
-                                            style={{ width: `${segment.percentage}%` }}
-                                        ></div>
-                                    </div>
-                                    <span className="text-sm font-medium text-gray-900 w-12 text-right">{segment.count}</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-6">Quick Insights</h3>
-                    <div className="space-y-4">
-                        <div className="p-4 bg-green-50 rounded-lg">
-                            <h4 className="font-semibold text-green-800">Best Performing Month</h4>
-                            <p className="text-sm text-green-700">June 2025 with Rs. 125,000 revenue</p>
-                        </div>
-                        <div className="p-4 bg-blue-50 rounded-lg">
-                            <h4 className="font-semibold text-blue-800">Most Popular Service</h4>
-                            <p className="text-sm text-blue-700">Brake Service with 35% of total revenue</p>
-                        </div>
-                        <div className="p-4 bg-purple-50 rounded-lg">
-                            <h4 className="font-semibold text-purple-800">Customer Growth</h4>
-                            <p className="text-sm text-purple-700">16.7% increase in active customers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     );
 }

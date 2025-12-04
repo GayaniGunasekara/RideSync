@@ -4,8 +4,8 @@ import { useState } from 'react';
 export default function Profile() {
     const [isEditing, setIsEditing] = useState(false);
     const [profile, setProfile] = useState({
-        name: 'John Doe',
-        email: 'john.doe@email.com',
+        name: 'Gayani Gunasekara',
+        email: 'jgayani@gmail.com',
         phone: '+94 77 123 4567',
         address: '123 Main Street, Colombo 03, Sri Lanka',
         emergencyContact: '+94 77 987 6543',
@@ -35,12 +35,13 @@ export default function Profile() {
                 </div>
                 <button
                     onClick={() => setIsEditing(!isEditing)}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-600 transition-colors"
+                    className="bg-[#024b56] text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-[#038fa4] transition-colors"
                 >
                     {isEditing ? <Save size={20} /> : <Edit size={20} />}
                     {isEditing ? 'Save Changes' : 'Edit Profile'}
                 </button>
             </div>
+
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Profile Card */}
@@ -48,11 +49,11 @@ export default function Profile() {
                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                         <div className="text-center">
                             <div className="relative inline-block mb-4">
-                                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto">
+                                <div className="w-24 h-24 bg-gradient-to-br bg-[#024b56] rounded-full flex items-center justify-center mx-auto">
                                     <User size={40} className="text-white" />
                                 </div>
                                 {isEditing && (
-                                    <button className="absolute bottom-0 right-0 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
+                                    <button className="absolute bottom-0 right-0 bg-[#024b56] text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
                                         <Camera size={16} />
                                     </button>
                                 )}
